@@ -13,10 +13,9 @@ const App = () => {
       name,
       price: +price
     }])
-    // setName('')
-    // setPrice('')
-
-    nameRef.current.focus()
+    setName('')
+    setPrice('')
+    nameRef.current.focus();
   }
 
   const total = useMemo(() => {
@@ -24,6 +23,7 @@ const App = () => {
       console.log('Tính toán lại...');
       return result + prod.price
     }, 0)
+    
     return result
   }, [products])
 
@@ -52,14 +52,6 @@ const App = () => {
       </ul>
     </div>
   );
-};
-
-const expensiveCalculation = (num) => {
-  console.log("Calculating...");
-  for (let i = 0; i < 1000000000; i++) {
-    num += 1;
-  }
-  return num;
 };
 
 export default App
